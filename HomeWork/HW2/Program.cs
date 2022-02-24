@@ -6,14 +6,16 @@ namespace HW2
     {
         static void Main(string[] args)
         {
- /*           Console.WriteLine("Task 1");
+    /*        Console.WriteLine("Task 1");
             ArithmeticOperations();
             Console.WriteLine("Task 2");
             DefinitionQuarterCoordinatePlane();
             Console.WriteLine("Task 3");
-            OutputAscendingOrder();*/
+            OutputAscendingOrder();
             Console.WriteLine("Task 4");
-            SolvingQuadraticEquation();
+            SolvingQuadraticEquation();*/
+            Console.WriteLine("Task 5");
+            TranslatingNumbersIntoWrittenForm();
         }
 
         static void ArithmeticOperations()
@@ -131,6 +133,29 @@ namespace HW2
                 Console.Write($"x2 = {-secondCoefficient / (2 * firstCoefficient)} - ");
                 Console.WriteLine($"{(Math.Sqrt(discriminant * (-1))) / (2 * firstCoefficient)}i");
             }
+        }
+
+        static void TranslatingNumbersIntoWrittenForm()
+        {
+            Console.Write("Enter a number in the range from 10 to 99: ");
+            int number = Convert.ToInt32(Console.ReadLine());
+            if (number > 9 && number < 100)
+            {
+                string[] numbers = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+                string[] dozens = { "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
+                string[] secondTen = {
+                    "ten", "eleven", "twelve", "thirteen", "fourteen",
+                    "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
+
+                if (number < 20)
+                    Console.WriteLine($"The written form of the number {number}: {secondTen[number % 10]}");
+
+                else
+                    Console.WriteLine($"The written form of the number {number}: {dozens[number / 10 - 2]} {numbers[number % 10 - 1]}");
+            }
+
+            else
+                Console.WriteLine("The number does not match the range");
         }
     }
 }
