@@ -6,10 +6,12 @@ namespace HW2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Task 1");
+/*            Console.WriteLine("Task 1");
             ArithmeticOperations();
-            Console.WriteLine("Task 1");
-            DefinitionQuarterCoordinatePlane();
+            Console.WriteLine("Task 2");
+            DefinitionQuarterCoordinatePlane();*/
+            Console.WriteLine("Task 3");
+            OutputAscendingOrder();
         }
 
         static void ArithmeticOperations()
@@ -47,6 +49,37 @@ namespace HW2
                 Console.WriteLine("The point belongs to the third quarter of the coordinate plane");
             else
                 Console.WriteLine("The point belongs to the fourth quarter of the coordinate plane");
+        }
+
+        static void OutputAscendingOrder()
+        {
+            Console.Write("Enter the first number: ");
+            double number1 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter the second number: ");
+            double number2 = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Enter the third number: ");
+            double number3 = Convert.ToDouble(Console.ReadLine());
+            if (number1 > number2 && number1 > number3)
+            {
+                if (number2 > number3)
+                    Console.WriteLine($"Numbers in ascending order: {number3} {number2} {number1}");
+                else
+                    Console.WriteLine($"Numbers in ascending order: {number2} {number3} {number1}");
+            }
+            else if (number2 > number1 && number2 > number3)
+            {
+                if (number1 > number3)
+                    Console.WriteLine($"Numbers in ascending order: {number3} {number1} {number2}");
+                else
+                    Console.WriteLine($"Numbers in ascending order: {number1} {number3} {number2}");
+            }
+            else
+            {
+                if (number1 > number2)
+                    Console.WriteLine($"Numbers in ascending order: {number2} {number1} {number3}");
+                else
+                    Console.WriteLine($"Numbers in ascending order: {number1} {number2} {number3}");
+            }
         }
     }
 }
