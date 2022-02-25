@@ -6,14 +6,18 @@ namespace HW2
     {
         static void Main(string[] args)
         {
-    /*        Console.WriteLine("Task 1");
+            Console.WriteLine("Task 1");
             ArithmeticOperations();
+
             Console.WriteLine("Task 2");
             DefinitionQuarterCoordinatePlane();
+
             Console.WriteLine("Task 3");
             OutputAscendingOrder();
+
             Console.WriteLine("Task 4");
-            SolvingQuadraticEquation();*/
+            SolvingQuadraticEquation();
+
             Console.WriteLine("Task 5");
             TranslatingNumbersIntoWrittenForm();
         }
@@ -75,29 +79,23 @@ namespace HW2
             Console.Write("Enter the third number: ");
             double number3 = Convert.ToDouble(Console.ReadLine());
 
-            if (number1 > number2 && number1 > number3)
-            {
-                if (number2 > number3)
-                    Console.WriteLine($"Numbers in ascending order: {number3} {number2} {number1}");
-                else
-                    Console.WriteLine($"Numbers in ascending order: {number2} {number3} {number1}");
-            }
+            if (number1 > number2 && number2 > number3)
+                Console.WriteLine($"Numbers in ascending order: {number3} {number2} {number1}");
 
-            else if (number2 > number1 && number2 > number3)
-            {
-                if (number1 > number3)
-                    Console.WriteLine($"Numbers in ascending order: {number3} {number1} {number2}");
-                else
-                    Console.WriteLine($"Numbers in ascending order: {number1} {number3} {number2}");
-            }
+            else if (number1 > number2 && number3 > number2)
+                Console.WriteLine($"Numbers in ascending order: {number2} {number3} {number1}");
+
+            else if (number2 > number1 && number1 > number3)
+                Console.WriteLine($"Numbers in ascending order: {number3} {number1} {number2}");
+
+            else if (number2 > number1 && number3 > number1)
+                Console.WriteLine($"Numbers in ascending order: {number1} {number3} {number2}");
+
+            else if (number3 > number1 && number2 > number1)
+                Console.WriteLine($"Numbers in ascending order: {number1} {number2} {number3}");
 
             else
-            {
-                if (number1 > number2)
-                    Console.WriteLine($"Numbers in ascending order: {number2} {number1} {number3}");
-                else
-                    Console.WriteLine($"Numbers in ascending order: {number1} {number2} {number3}");
-            }
+                Console.WriteLine($"Numbers in ascending order: {number2} {number1} {number3}");
         }
 
         static void SolvingQuadraticEquation()
@@ -139,24 +137,114 @@ namespace HW2
         {
             Console.Write("Enter a number in the range from 10 to 99: ");
             int number = Convert.ToInt32(Console.ReadLine());
-            if (number > 9 && number < 100)
+            int dozen = number / 10;
+            int unit = number % 10;
+            string writtenFormNumbe = "";
+
+            if (number < 20)
             {
-                string[] numbers = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-                string[] dozens = { "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" };
-                string[] secondTen = {
-                    "ten", "eleven", "twelve", "thirteen", "fourteen",
-                    "fifteen", "sixteen", "seventeen", "eighteen", "nineteen" };
-
-                if (number < 20)
-                    Console.WriteLine($"The written form of the number {number}: {secondTen[number % 10]}");
-
-                else
-                    Console.WriteLine($"The written form of the number {number}: {dozens[number / 10 - 2]} {numbers[number % 10 - 1]}");
+                switch(unit)
+                {
+                    case 0:
+                        writtenFormNumbe = "ten";
+                        break;
+                    case 1:
+                        writtenFormNumbe = "eleven";
+                        break;
+                    case 2:
+                        writtenFormNumbe = "twelve";
+                        break;
+                    case 3:
+                        writtenFormNumbe = "thirteen";
+                        break;
+                    case 4:
+                        writtenFormNumbe = "fourteen";
+                        break;
+                    case 5:
+                        writtenFormNumbe = "fifteen";
+                        break;
+                    case 6:
+                        writtenFormNumbe = "sixteen";
+                        break;
+                    case 7:
+                        writtenFormNumbe = "seventeen";
+                        break;
+                    case 8:
+                        writtenFormNumbe = "eighteen";
+                        break;
+                    case 9:
+                        writtenFormNumbe = "nineteen";
+                        break;
+                    default:
+                        break;
+                }
             }
-
             else
-                Console.WriteLine("The number does not match the range");
+            {
+                switch(dozen)
+                {
+                    case 2:
+                        writtenFormNumbe = "twenty ";
+                        break;
+                    case 3:
+                        writtenFormNumbe = "thirty ";
+                        break;
+                    case 4:
+                        writtenFormNumbe = "fourty ";
+                        break;
+                    case 5:
+                        writtenFormNumbe = "fifty ";
+                        break;
+                    case 6:
+                        writtenFormNumbe = "sixty ";
+                        break;
+                    case 7:
+                        writtenFormNumbe = "seventy ";
+                        break;
+                    case 8:
+                        writtenFormNumbe = "eighty ";
+                        break;
+                    case 9:
+                        writtenFormNumbe = "ninety ";
+                        break;
+                    default:
+                        break;
+                }
+
+                switch (unit)
+                {
+                    case 1:
+                        writtenFormNumbe += "one";
+                        break;
+                    case 2:
+                        writtenFormNumbe += "two";
+                        break;
+                    case 3:
+                        writtenFormNumbe += "three";
+                        break;
+                    case 4:
+                        writtenFormNumbe += "four";
+                        break;
+                    case 5:
+                        writtenFormNumbe += "five";
+                        break;
+                    case 6:
+                        writtenFormNumbe += "six";
+                        break;
+                    case 7:
+                        writtenFormNumbe += "seven";
+                        break;
+                    case 8:
+                        writtenFormNumbe += "eight";
+                        break;
+                    case 9:
+                        writtenFormNumbe += "nine";
+                        break;
+                    default:
+                        break;
+                }
+            }
+            Console.WriteLine($"The written form of the number {number}: {writtenFormNumbe}");
         }
     }
 }
-
