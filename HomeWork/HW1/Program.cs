@@ -25,7 +25,9 @@ namespace HomeWorkVariables
             Console.Write("Enter the divisor: ");
             int divisor = Convert.ToInt32(Console.ReadLine());
             if (divisor == 0)
+            {
                 Console.WriteLine("Warning!!! Division by 0");
+            }
             else
             {
                 Console.WriteLine($"Division result: {divisible / divisor}");
@@ -40,7 +42,9 @@ namespace HomeWorkVariables
             Console.Write("Enter the second number: ");
             int number2 = Convert.ToInt32(Console.ReadLine());
             if (number1 == number2)
+            {
                 Console.WriteLine("Warning!!! Division by 0");
+            }
             else
             {
                 int result = (int)(5 * number1 + Math.Pow(number2, 2)) / (number2 - number1);
@@ -89,11 +93,17 @@ namespace HomeWorkVariables
             double y2 = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("The equation of a straight line passing through two points has the following form:");
             if (-x1 * (y2 - y1) / (x2 - x1) + y1 > 0)
+            {
                 Console.WriteLine($"y = {(y2 - y1) / (x2 - x1)}x + {-x1 * (y2 - y1) / (x2 - x1) + y1}");
+            }
             else if (-x1 * (y2 - y1) / (x2 - x1) + y1 < 0)
+            {
                 Console.WriteLine($"y = {(y2 - y1) / (x2 - x1)}x - {-x1 * (y2 - y1) / (x2 - x1) + y1}");
+            }
             else
+            {
                 Console.WriteLine($"y = {(y2 - y1) / (x2 - x1)}x");
+            }
         }
     }
 }
