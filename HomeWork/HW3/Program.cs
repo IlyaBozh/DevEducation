@@ -4,7 +4,9 @@
 //FindingNumberPositiveSquaresNumbers();
 //FindingLargestDivisorNumber();
 //SumNumbersInRange();
-SearchFibonacciNumberByNumber();
+//SearchFibonacciNumberByNumber();
+//EuclidAlgorithm();
+MethodHalfDivision();
 
 
 
@@ -121,4 +123,59 @@ static void SearchFibonacciNumberByNumber()
     }
 
     Console.WriteLine($"The number of the Fibonacci series under the number {serialNumber} = {thirdNumber}");
+}
+
+// Task 7
+static void EuclidAlgorithm()
+{
+    Console.Write("Enter the first number: ");
+    int number1 = Convert.ToInt32(Console.ReadLine());  
+    Console.Write("Enter the second number: ");
+    int number2 = Convert.ToInt32(Console.ReadLine());
+
+    if (number2 > number1)
+    {
+        int tmp  = number1;
+        number1 = number2;
+        number2 = tmp;
+    }
+
+    int largestDivisor = number2;
+
+    while (number1 % number2 != 0)
+    {
+        largestDivisor = number1 % number2;
+        number1 = number2;
+        number2 = largestDivisor;
+    }
+
+    Console.WriteLine($"The largest divisor of numbers = {largestDivisor}");
+}
+
+// Task 8
+static void MethodHalfDivision()
+{
+    Console.Write("Enter the number: ");
+    double number = Convert.ToDouble(Console.ReadLine());
+    double rightBorder = number;
+    double leftBorder = 0;
+    double middleInterval = (rightBorder + leftBorder) / 2;
+    double errorRate = 0.02;
+    
+    while (number > Math.Pow(middleInterval, 3) + errorRate || number < Math.Pow(middleInterval, 3) - errorRate)
+    {
+        if (Math.Pow(middleInterval, 3) > number)
+        {
+            rightBorder = middleInterval;
+            middleInterval = (rightBorder + leftBorder) / 2;
+        }
+
+        else
+        {
+            leftBorder = middleInterval;
+            middleInterval = (rightBorder + leftBorder) / 2;
+        }
+    }
+
+    Console.WriteLine($"curt({number}) = {middleInterval}");
 }
