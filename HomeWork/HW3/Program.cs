@@ -6,8 +6,11 @@
 //SumNumbersInRange();
 //SearchFibonacciNumberByNumber();
 //EuclidAlgorithm();
-MethodHalfDivision();
-
+//MethodHalfDivision();
+//FindingNumberOddNumbers();
+//MirroringNumber();
+//OutputNumbersWithLargerSumEvenNumbers();
+FindingSimilarityNumbers();
 
 
 
@@ -178,4 +181,120 @@ static void MethodHalfDivision()
     }
 
     Console.WriteLine($"curt({number}) = {middleInterval}");
+}
+
+// Task 9
+static void FindingNumberOddNumbers()
+{
+    Console.Write("Enter the number: ");
+    int number = Convert.ToInt32(Console.ReadLine());
+    int countOddNumbers = 0;
+    int unit;
+
+    while (number != 0)
+    {
+        unit = number % 10;
+        number /= 10;
+        if (unit % 2 != 0)
+        {
+            countOddNumbers++;
+        }
+    }
+
+    Console.WriteLine($"The number of odd numbers = {countOddNumbers}");
+}
+
+// Task 10
+static void MirroringNumber()
+{
+    Console.Write("Enter the number: ");
+    int number = Convert.ToInt32(Console.ReadLine());
+    int mirrorNumber = 0;
+    int unit;
+
+    while (number != 0)
+    {
+        unit = number % 10;
+        mirrorNumber = mirrorNumber * 10 + unit;
+        number /= 10;
+    }
+
+    Console.WriteLine($"Mirror number = {mirrorNumber}");
+}
+
+// Task 11
+static void OutputNumbersWithLargerSumEvenNumbers()
+{
+    Console.Write("Enter the number: ");
+    int number = Convert.ToInt32(Console.ReadLine());
+    int tmp;
+    int sumOdd = 0;
+    int sumEven = 0;
+    int unit;
+    Console.WriteLine($"Numbers in the range from 1 to {number}: ");
+
+    for (int i = 1; i < number; i++)
+    {
+        tmp = i;
+
+        while (tmp != 0)
+        {
+            unit = tmp % 10;
+            tmp /= 10;
+            if (unit % 2 == 0)
+            {
+                sumEven += unit;
+            }
+            else
+            {
+                sumOdd += unit;
+            }
+        }
+
+        if (sumEven > sumOdd)
+        {
+            Console.WriteLine(i);
+        }
+
+        sumOdd = 0;
+        sumEven = 0;
+    }
+}
+
+// Task 12
+static void FindingSimilarityNumbers()
+{
+    Console.Write("Enter the first number: ");
+    int number1 = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Enter the second number: ");
+    int number2 = Convert.ToInt32(Console.ReadLine());
+    bool comparisonUnits = false;
+    int tmp = number2;
+    int unitNumber1;
+    int unitNumber2;
+
+    Console.WriteLine("Let's check if these numbers have the same digits.");
+
+    while (number1 != 0)
+    {
+        unitNumber1 = number1 % 10;
+        number1 /= 10;
+
+        while (number2 != 0)
+        {
+            unitNumber2 = number2 % 10;
+            number2 /= 10;
+
+            if (unitNumber1 == unitNumber2)
+            {
+                comparisonUnits = true;
+                Console.WriteLine("Yes");
+                return;
+            }
+        }
+
+        number2 = tmp;
+    }
+
+    Console.WriteLine("No");
 }
