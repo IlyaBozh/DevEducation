@@ -1,23 +1,24 @@
 ﻿
-//Exponentiation();
-//SearchDivisibleNumbers();
-//FindingNumberPositiveSquaresNumbers();
-//FindingLargestDivisorNumber();
-//SumNumbersInRange();
-//SearchFibonacciNumberByNumber();
-//EuclidAlgorithm();
-//MethodHalfDivision();
-//FindingNumberOddNumbers();
-//MirroringNumber();
-//OutputNumbersWithLargerSumEvenNumbers();
-FindingSimilarityNumbers();
+//RaiseNumberToPower();
+//FindDivisibleNumbers();
+//FindSmallerSquaresOfNumbers();
+//FindLargestDivisor();
+//FindSumOfNumbersWithDivisorOf7();
+//FindFibonacciNumber();
+//FindDivisorByEuclidAlgorithm();
+//FindNumberByMethodOfHalfDivision();
+//FindQuantityOddNumbers();
+//FindMirrorNumber();
+//FindNumbersWithLargerSumOfEven();
+//ThereAreIdenticalUnits()
+
 
 
 
 
 
 // Task 1
-static void Exponentiation()
+static void RaiseNumberToPower()
 {
     Console.Write("Enter a number: ");
     double number = Convert.ToDouble(Console.ReadLine());
@@ -39,7 +40,7 @@ static void Exponentiation()
 }
 
 // Task 2
-static void SearchDivisibleNumbers()
+static void FindDivisibleNumbers()
 {
     Console.Write("Enter a number: ");
     int number = Convert.ToInt32(Console.ReadLine());
@@ -52,7 +53,7 @@ static void SearchDivisibleNumbers()
 }
 
 // Task 3
-static void FindingNumberPositiveSquaresNumbers()
+static void FindSmallerSquaresOfNumbers()
 {
     Console.Write("Enter a number: ");
     int number = Convert.ToInt32(Console.ReadLine());
@@ -67,7 +68,7 @@ static void FindingNumberPositiveSquaresNumbers()
 }
 
 // Task 4
-static void FindingLargestDivisorNumber()
+static void FindLargestDivisor()
 {
     Console.Write("Enter a number: ");
     int number = Convert.ToInt32(Console.ReadLine());
@@ -82,7 +83,7 @@ static void FindingLargestDivisorNumber()
 }
 
 // Task 5
-static void SumNumbersInRange()
+static void FindSumOfNumbersWithDivisorOf7()
 {
     Console.Write("Enter the left border: ");
     int leftBorder = Convert.ToInt32(Console.ReadLine());
@@ -109,7 +110,7 @@ static void SumNumbersInRange()
 }
 
 // Task 6
-static void SearchFibonacciNumberByNumber()
+static void FindFibonacciNumber()
 {
     Console.Write("Enter the number of the Fibonacci number: ");
     int serialNumber = Convert.ToInt32(Console.ReadLine());
@@ -129,7 +130,7 @@ static void SearchFibonacciNumberByNumber()
 }
 
 // Task 7
-static void EuclidAlgorithm()
+static void FindDivisorByEuclidAlgorithm()
 {
     Console.Write("Enter the first number: ");
     int number1 = Convert.ToInt32(Console.ReadLine());  
@@ -156,7 +157,7 @@ static void EuclidAlgorithm()
 }
 
 // Task 8
-static void MethodHalfDivision()
+static void FindNumberByMethodOfHalfDivision()
 {
     Console.Write("Enter the number: ");
     double number = Convert.ToDouble(Console.ReadLine());
@@ -184,7 +185,7 @@ static void MethodHalfDivision()
 }
 
 // Task 9
-static void FindingNumberOddNumbers()
+static void FindQuantityOddNumbers()
 {
     Console.Write("Enter the number: ");
     int number = Convert.ToInt32(Console.ReadLine());
@@ -205,7 +206,7 @@ static void FindingNumberOddNumbers()
 }
 
 // Task 10
-static void MirroringNumber()
+static void FindMirrorNumber()
 {
     Console.Write("Enter the number: ");
     int number = Convert.ToInt32(Console.ReadLine());
@@ -223,7 +224,7 @@ static void MirroringNumber()
 }
 
 // Task 11
-static void OutputNumbersWithLargerSumEvenNumbers()
+static void FindNumbersWithLargerSumOfEven()
 {
     Console.Write("Enter the number: ");
     int number = Convert.ToInt32(Console.ReadLine());
@@ -262,13 +263,12 @@ static void OutputNumbersWithLargerSumEvenNumbers()
 }
 
 // Task 12
-static void FindingSimilarityNumbers()
+static void ThereAreIdenticalUnits()
 {
     Console.Write("Enter the first number: ");
     int number1 = Convert.ToInt32(Console.ReadLine());
     Console.Write("Enter the second number: ");
     int number2 = Convert.ToInt32(Console.ReadLine());
-    bool comparisonUnits = false;
     int tmp = number2;
     int unitNumber1;
     int unitNumber2;
@@ -287,7 +287,6 @@ static void FindingSimilarityNumbers()
 
             if (unitNumber1 == unitNumber2)
             {
-                comparisonUnits = true;
                 Console.WriteLine("Yes");
                 return;
             }
