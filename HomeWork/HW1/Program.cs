@@ -7,18 +7,18 @@ namespace HomeWorkVariables
         static void Main(string[] args)
         {
             Console.WriteLine("Task 1");
-            DivisionWithRemainder();
+            DivideNumbersWithRemainder();
             Console.WriteLine("Task 2");
-            CalculatingExpression();
+            SolveExpression();
             Console.WriteLine("Task 3");
-            ExchangeVariableValues();
+            SwapLines();
             Console.WriteLine("Task 4");
-            SolvingLinearEquation();
+            SolveLinearEquation();
             Console.WriteLine("Task 5");
-            DerivationEquationStraightLine();
+            FindEquationOfStraightLine();
         }
 
-        static void DivisionWithRemainder()
+        static void DivideNumbersWithRemainder()
         {
             Console.Write("Enter the divisible: ");
             int divisible = Convert.ToInt32(Console.ReadLine());
@@ -35,7 +35,7 @@ namespace HomeWorkVariables
             }
         }
 
-        static void CalculatingExpression()
+        static void SolveExpression()
         {
             Console.Write("Enter the first number: ");
             int number1 = Convert.ToInt32(Console.ReadLine());
@@ -53,7 +53,7 @@ namespace HomeWorkVariables
             }
         }
 
-        static void ExchangeVariableValues()
+        static void SwapLines()
         {
             Console.Write("Enter the value of the first variable: ");
             string str1 = Console.ReadLine();
@@ -67,7 +67,7 @@ namespace HomeWorkVariables
             Console.WriteLine($"The value of the second variable: {str2}");
         }
 
-        static void SolvingLinearEquation()
+        static void SolveLinearEquation()
         {
             Console.Write("Enter the first term of the linear equation: ");
             double firstTerm = Convert.ToDouble(Console.ReadLine());
@@ -79,7 +79,8 @@ namespace HomeWorkVariables
             Console.WriteLine($"x = {(thirdTerm - secondTerm) / firstTerm}");
         }
 
-        static void DerivationEquationStraightLine()
+        static void FindEquationOfStraightLine()
+()
         {
             Console.WriteLine("Enter the coordinates of the first point:");
             Console.Write("x: ");
