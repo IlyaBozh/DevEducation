@@ -7,22 +7,22 @@ namespace HW2
         static void Main(string[] args)
         {
             Console.WriteLine("Task 1");
-            ArithmeticOperations();
+            PerformArithmeticOperationOnNumbers();
 
             Console.WriteLine("Task 2");
-            DefinitionQuarterCoordinatePlane();
+            DeterminePositionOfPointOnCoordinatePlane();
 
             Console.WriteLine("Task 3");
-            OutputAscendingOrder();
+            SortNumbers();
 
             Console.WriteLine("Task 4");
-            SolvingQuadraticEquation();
+            SolveQuadraticEquation();
 
             Console.WriteLine("Task 5");
-            TranslatingNumbersIntoWrittenForm();
+            TranslatNumberIntoWrittenForm();
         }
 
-        static void ArithmeticOperations()
+        static void PerformArithmeticOperationOnNumbers()
         {
             Console.Write("Enter the first number: ");
             double number1 = Convert.ToDouble(Console.ReadLine());
@@ -45,7 +45,7 @@ namespace HW2
             }
         }
 
-        static void DefinitionQuarterCoordinatePlane()
+        static void DeterminePositionOfPointOnCoordinatePlane()
         {
             Console.WriteLine("Enter the coordinates of the point:");
             Console.Write("x: ");
@@ -89,7 +89,7 @@ namespace HW2
             }
         }
 
-        static void OutputAscendingOrder()
+        static void SortNumbers()
         {
             Console.Write("Enter the first number: ");
             double number1 = Convert.ToDouble(Console.ReadLine());
@@ -129,7 +129,7 @@ namespace HW2
             }
         }
 
-        static void SolvingQuadraticEquation()
+        static void SolveQuadraticEquation()
         {
             Console.Write("Enter the first coefficient of the quadratic equation: ");
             double firstCoefficient = Convert.ToDouble(Console.ReadLine());
@@ -164,7 +164,7 @@ namespace HW2
             }
         }
 
-        static void TranslatingNumbersIntoWrittenForm()
+        static void TranslatNumberIntoWrittenForm()
         {
             Console.Write("Enter a number in the range from 10 to 99: ");
             int number = Convert.ToInt32(Console.ReadLine());
